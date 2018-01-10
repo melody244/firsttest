@@ -1,157 +1,394 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
-    <meta name="title" content="導遊列車驛站">
-    <meta name="KeyWords" content="">
-    <meta name="Description" content="">
-    <meta name="copyright" content="本網頁著作權屬智凰網路科技所有！">
-    <meta name="Robots" content="INDEX,FOLLOW">
-    <meta name="revisit-after" content="1">
-	<title>導遊列車驛站</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link href="css/font-awesome.min.css"  rel="stylesheet" >
-  <link rel="stylesheet" type="text/css" href="css/master.css">
+    <meta charset="UTF-8">
+    <title>網站名稱</title>
+    <!--web icon-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--Device icon-->
+    <link href="圖片路徑" rel="apple-touch-icon" />
+    <!-- SEO -->
+    <meta name="Title" content="">
+	<meta name="KeyWords" content="">
+	<meta name="Description" content="">
+    <meta name="copyright" content="本網頁著作權屬智凰網路科技所有！"> 
+    <!--手機解析度-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
+	<!--IE瀏覽器模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<!--fb-->
+    <meta property="og:title" content="FB的標題" />
+    <meta property="og:description" content="FB的描述">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="FB上的網址" />
+    <meta property="og:image" content="FB的圖片" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/help/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="css/HPlant_v01.css">
+    <link rel="stylesheet" href="css/master.css"> 
+    <!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 11]>
+	<script>
+	alert('您正在使用版本過舊的瀏覽器，系統即將自動導向google瀏覽器下載頁面');
+	window.location="https://www.google.com.tw/chrome/browser/desktop/";
+	</script>
+	<![endif]-->
 </head>
 <body>
-<div class="wrap" style="height: 100%;">
-<!-- head -->
-<nav class="navbar">
-<div class="clearfix content">
-   <button class="fa fa-bars" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="navbar-brand">導遊列車驛站</div>
-</div>
-  <div class="collapse" id="exCollapsingNavbar">
-    <div class="text-muted p-1">
-    <ul class="nav navbar-nav">
-     <li class="nav-item active"><a class="nav-link" href="index.html" title="首頁">首頁</a></li>
-      <li class="nav-item"><a class="nav-link" href="login.html" title="成員專區">成員專區</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-03.html" title="受訓情報">受訓情報</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-08.html" title="購物店情報">購物店情報</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-07.html" title="遊覽車公司">遊覽車公司</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-04.html" title="住宿介紹">住宿介紹</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-05.html" title="寄鋪情報">寄鋪情報</a></li>
-      <li class="nav-item"><a class="nav-link" href="#" title="參考行程">參考行程</a></li>
-      <li class="nav-item"><a class="nav-link" href="#" title="急難救助單位">急難救助單位</a></li>
-      <li class="nav-item"><a class="nav-link" href="page-06.html" title="餐廳情報">餐廳情報</a></li>
-      <li class="nav-item"><a class="nav-link" href="#" title="保險公司一覽">保險公司一覽</a></li>
+	<!-- fb嵌入 -->
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- 頂部固定導覽列 -->
+<nav id="fixed-menu" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top clearfix ">
+	<!-- 手機版選單開關 -->
+	<button id="open-nav" class="navbar-toggler button-collapse" onclick="openNav()" aria-hidden="true">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- logo-m -->
+  <!-- <a class="navbar-brand mobile-logo" href="#">Navbar</a> -->
+    <!-- order-now -->
+  <div class="float-right"><button class="btn btn-sm btn-light" href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i>購物車</button></div>
+  <!-- 選單內容 -->
+   <div class="collapse navbar-collapse flex-row-reverse" id="navbarTogglerDemo01">
+   	<ul class="navbar-nav">
+      <li class="nav-item"><span class="nav-link"><i class="fa fa-phone" aria-hidden="true"></i>訂購專線： 049-2612121</span></li>
+      <!-- 語系選擇 -->
+      <li class="nav-item dropdown">
+        <button class="dropdown-toggle btn btn-sm btn-outline-secondary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-globe"></i>中文（繁）
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">中文（簡）</a>
+          <a class="dropdown-item" href="#">EN</a>
+          <a class="dropdown-item" href="#">JP</a>
+        </div>
+      </li>
     </ul>
-    </div>
-  </div>
-</nav>
-<!-- /head -->
-<!-- banner-L -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  <h1 class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img src="images/banner-m.jpg" alt="導遊列車驛站">
-    </div>
-   <div class="carousel-item">
-      <img src="images/banner-m.jpg" alt="導遊列車驛站">
-    </div>
-    <div class="carousel-item">
-      <img src="images/banner-m.jpg" alt="導遊列車驛站">
-    </div>
-  </div>
-</h1>
-<!-- /banner-L -->
-<!-- login & signup -->
-<div id="member-bt" class="clearfix btn-group">
-  <a href="signup.html" class="btn-warp">
-  <div class="clearfix" class="content">
-    <img src="images/profle.png" class="icon">
-    <div class="character">加入會員<br><span>Sign Up</span></div>
-  </div>
-  </a>
-  <a href="login.html" class="btn-warp">
-  <div class="clearfix" class="content">
-    <img src="images/key.png" class="icon">
-    <div class="character">登入會員<br><span>Log In</span></div>
-  </div>
-  </a>
-  <span class="line"></span>
+   </div>
+</nav><!-- /頂部固定導覽列 -->
+<!-- m版側邊選單 -->
+ <div id="mySidenav" class="sidenav ">
+<ul>
+  <li><a href="index.html">回首頁</a></li>
+  <li><a href="rooms.html">商店介紹</a></li>
+  <li><a href="restaurants.html">所有商品</a></li>
+  </ul>
+</div> 
+<!-- /m版側選單 -->
+<!-- body-wraper -->
+<div class="body-wraper">
+	<div class="pd60"></div>
+	<!-- 內頁導覽列 -->
+	<nav class="main-navigation">
+		<div class="container">	
+				<div class="row">
+					<div class="col-md-3 navbar-header">
+						<!-- logo -->
+						<div class="logo-wrap">
+							<a href="#" title=""><img src="images/logo-l.jpg" alt="logo"></a>
+						</div></div>
+						<div class="col-md-9">
+								<!-- 店家導覽列 -->
+		<div class="navbar-menu d-none d-md-block">
+				<ul class="navbar-wrap">
+					<li><a href="#" title="">回首頁</a></li>
+					<li><a href="#" title="">商店介紹</a></li>
+					<li class="dropdown-list">
+						<a href="#" title="">所有商品<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						 <div class="submenu">
+								<a href="news.html">最新商品</a>
+						 	<a href="news.html">台灣水果乾</a>
+						 	<a href="news.html">世界水果乾</a>
+						 </div>
+					</li>
+					<li><a href="#" title="">活動專區</a></li>
+				</ul>
+		</div>
+						</div>
+				</div>
+				
+		
+		</div>
+	</nav><!-- /內頁導覽列 -->
+	<!-- 大塊廣告區 -->
+	<div class="dm-wrap-lg">
+		<div class="container">
+		<ul class="dm-carousel-lg">
+			<li><a href="#" title=""><img src="upload/banner/dm-lg-01.jpg" alt="dm01"></a></li>
+			<li><a href="#" title=""><img src="upload/banner/dm-lg-02.jpg" alt="dm02"></a></li>
+			<li><a href="#" title=""><img src="upload/banner/dm-lg-03.jpg" alt="dm03"></a></li>
+		</ul>
+		</div>
+	</div>
+	<!-- 3欄式輪播區塊 -->
+	<div class="section-card">
+		<div class="container">
+			<h3 class="l-title-primary">最新消息</h3>
+			<ul class="card-wrap-3 l-protuct-carousel">
+				<li class="l-protuct-item">
+					<a href="#" title="">
+					<div class="photo-wrap" style="background-image: url(upload/news/news-01.jpg);">
+						<img src="upload/news/news-01.jpg" alt="" class="img-fluid d-none">
+					</div>
+					<div class="title-wrap">
+						<div class="title">美濃-溫大哥的香蕉</div>
+					</div>
+					<!-- <div class="hover-border"></div> -->
+					</a>
+				</li>
+				<li class="l-protuct-item">
+					<a href="#" title="">
+					<div class="photo-wrap" style="background-image: url(upload/news/news-02.jpg);">
+						<img src="upload/news/news-01.jpg" alt="" class="img-fluid d-none">
+					</div>
+					<div class="title-wrap">
+						<div class="title">冬季限定-美濃玉女番茄</div>
+					</div>
+					<!-- <div class="hover-border"></div> -->
+					</a>
+				</li>
+				<li class="l-protuct-item">
+					<a href="#" title="">
+					<div class="photo-wrap" style="background-image: url(upload/news/news-03.jpg);">
+						<img src="upload/news/news-01.jpg" alt="" class="img-fluid d-none">
+					</div>
+					<div class="title-wrap">
+						<div class="title">【菓季芭蕉乾】
+								選用自然熟成美濃、旗山在地芭蕉，果肉飽滿、味甜帶點酸，做出來的芭蕉乾，口感紮實有彈性，讓你一口接著一口</div>
+					</div>
+					<!-- <div class="hover-border"></div> -->
+					</a>
+				</li>
+				<li class="l-protuct-item">
+					<a href="#" title="">
+					<div class="photo-wrap" style="background-image: url(upload/news/news-01.jpg);">
+						<img src="upload/news/news-01.jpg" alt="" class="img-fluid d-none">
+					</div>
+					<div class="title-wrap">
+						<div class="title">冬季限定-美濃玉女番茄</div>
+					</div>
+					<!-- <div class="hover-border"></div> -->
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 商品房型列表 -->
+	<div class="section-card">
+		<div class="container">
+			<h3 class="l-title-primary">推薦商品</h3>
+			<div class="row row-2 l-protuct-nocarousel">
+					<div class="col-sm-6 l-protuct-item">
+							<a href="#" title="">
+								<div class="slick-self">
+									<div class="photo-wrap d-flex align-items-center">
+										<img src="upload/rooms/room02.jpg" alt="" class="img-fluid">
+									</div>
+								<div class="photo-wrap d-flex align-items-center">
+									<img src="upload/rooms/room03.jpg" alt="" class="img-fluid"></div>
+								<div class="photo-wrap d-flex align-items-center">
+									<img src="upload/rooms/room04.jpg" alt="" class="img-fluid">
+								</div>
+								</div>
+							<div class="l-product-name">【菓季】無添加香蕉乾，台灣在地，旗山、美濃香蕉</div>
+							</a>
+						</div>
+						<div class="col-sm-6 l-protuct-item">
+								<a href="#" title="">
+									<div class="slick-self">
+										<div class="photo-wrap d-flex align-items-center">
+											<img src="upload/rooms/room03.jpg" alt="" class="img-fluid">
+										</div>
+									<div class="photo-wrap d-flex align-items-center">
+										<img src="upload/rooms/room04.jpg" alt="" class="img-fluid">
+									</div>
+									<div class="photo-wrap d-flex align-items-center">
+										<img src="upload/rooms/room01.jpg" alt="" class="img-fluid">
+									</div>
+									</div>
+								<div class="l-product-name">【菓季】無添加柿子乾,台中摩天嶺甜柿</div>
+								</a>
+							</div>
+				<div class="col-sm-6 l-protuct-item">
+					<a href="#" title="">
+						<div class="photo-wrap">
+							<img src="upload/rooms/room03.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="name-wrap">
+							<div class="l-product-name">【菓季】無添加蘋果乾</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 l-protuct-item">
+					<a href="#" title="">
+						<div class="photo-wrap">
+							<img src="upload/rooms/room01.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="name-wrap">
+							<div class="l-product-name">【菓季】無添加奇異果乾</div>
+						</div>
+					</a>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- 關於 -->
+	<div class="section-card section-about">
+		<div class="container">
+			<h3 class="l-title-primary">關於我們</h3>
+			<div class="row">
+				<div class="col-sm-6"><img src="upload/about/about01.png" alt="" class="img-fluid"></div>
+				<div class="col-sm-6"><img src="upload/about/about02.png" alt="" class="img-fluid"></div>
+			</div>
+		</div>
+	</div>
+	<!-- fb -->
+	<div class="section-card">
+		<div class="container">
+			<div class="row">
+					<div class="col-sm-6 text-center">
+						<img src="images/600x.jpg" alt="" class="img-fluid">
+					</div>
+				<div class="col-sm-6 text-center">
+						<div id="fb-iframe" class="fb-page" data-href="https://www.facebook.com/Gorji.TW/" data-small-header="false" data-width="500" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Gorji.TW/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Gorji.TW/">菓季</a></blockquote></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 影片 -->
+	<div class="section-card">
+		<div class="container">
+				<div class="row">
+						<div class="col-sm-6">
+								<div class="l-video">
+									<iframe src="https://www.youtube.com/embed/teeAAE6fHLg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								</div>				
+							</div>
+							<div class="col-sm-6">
+									<div class="l-video">
+										<iframe src="https://www.youtube.com/embed/teeAAE6fHLg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									</div>				
+								</div>
+				</div>
+		</div>
+	</div>
+	<!-- 評價 -->
+	<div class="section-card">
+		<div class="container">
+			<div class="text-center h-100 h4">顧客綜合評價: <img src="images/stars.png" alt=""> </div>
+		</div>
+	</div>
+	<!-- 滿版區 -->
+<div class="section-card container-fluid">
+		<img src="upload/banner/br-01.jpg" alt="" class="img-fluid">
 </div>
-<!-- /login & signup -->
-<!-- list button -->
-<div id="gnbMenu">
-<div class="content">
-<a href="page-03.html" title="受訓情報" class="list-square">
-<i class="fa fa-pencil" aria-hidden="true"></i>
-<div class="title">受訓情報</div>
-</a>
-<a href="page-08.html" title="購物店情報" class="list-square">
-<i class="fa fa-shopping-bag" aria-hidden="true"></i>
-<div class="title">購物店情報</div>
-</a>
-<a href="page-07.html" title="遊覽車公司" class="list-square">
-<i class="fa fa-bus" aria-hidden="true"></i>
-<div class="title">遊覽車公司</div>
-</a>
-</div>
-<div class="content">
-<a href="login.html" title="成員專區" class="list-square bgcolor-orange">
-<i class="fa fa-user" aria-hidden="true"></i>
-<div class="title">成員專區</div>
-</a>
-<a href="page-04.html" title="住宿介紹" class="list-rectangle">
-  <img src="images/OE9RLO0.jpg" class="photo">
-<div class="title">住宿介紹</div>
-</a>
-</div>
-<div class="content">
-<a href="page-05.html" title="寄舖情報" class="list-square">
-<i class="fa fa-bed" aria-hidden="true"></i>
-<div class="title">寄舖情報</div>
-</a>
-<a href="#" title="參考行程" class="list-square">
-<i class="fa fa-th-list" aria-hidden="true"></i>
-<div class="title">參考行程</div>
-</a>
-<a href="" title="急難救助單位" class="list-square bgcolor-rad">
-<i class="fa fa-medkit" aria-hidden="true"></i>
-<div class="title">急難救助單位</div>
-</a>
-</div>
-<div class="content">
-<a href="page-06.html" title="餐廳情報" class="list-rectangle">
-  <img src="images/damo_10.jpg" class="photo">
-<div class="title">餐廳情報</div>
-</a>
-<a href="#" title="保險公司一覽" class="list-square">
-<i class="fa fa-heart" aria-hidden="true"></i>
-<div class="title">保險公司一覽</div>
-</a>
-</div>
-</div>
-<!-- /list button -->
-<!-- join us -->
-<div class="content-normal">
-  想知道更多消息，請加入我們的行列！<br>
-<button type="button" class="btn btn-outline-orange" onclick="location.href='page-01.html'">馬上加入</button>
-</div>
-<!-- /join us -->
-<!-- banner-S -->
-<div class="banner">
-<a href="#" title=""><img src="images/banner-s.jpg"  class="img-fluid" alt=""></a>
-</div>
-<!-- /banner-S -->
-<!-- footer -->
-<footer>台灣數位傳播與內容發展協會<br>
-此站提供您導遊培訓、導遊受訓、導遊訓練報名、導遊帶團、國內外踩線團資訊
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<ul class="">
+					<li><a href="#">關於</a></li>
+					<li><a href="#">合作夥伴</a></li>
+					<li><a href="#">最新動態</a></li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+					<ul class="sociallink">
+						<li><a href="#">facebook</a></li>
+						<li><a href="#">google</a></li>
+						<li><a href="#">instagram</a></li>
+					</ul>
+				</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="address">
+					<ul>
+						<li>高雄市前金區七賢二路195號(ROC)</li>
+						<li>TEL+886-4-2451-5788/+886-9-66-717919</li>
+						<li>合法旅店標章第381號</li>
+					</ul>	
+				</div>
+			</div>
+			<div class="col-md-6">
+					<div class="copyright">khanhote © Copyright All Rights Reserved.</div>
+			</div>
+		</div>
+	</div>
 </footer>
-<!-- /footer -->
-</div>
+</div><!-- /body-wraper -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+ <script>
+ 	//m版側選單
+$("#open-nav").click(function() {
+  $(this).toggleClass("on");
+  $("#mySidenav").toggleClass("open");
+});
+//下拉式選單
+    $(function(){
+        $('.dropdown-list').hover(function(){
+            if($(this).parent().hasClass('nav')) return false;
+            $(this).find('.submenu').stop(false,true).slideDown(200);
+        },function(){
+            if($(this).parent().hasClass('nav')) return false;
+            $(this).find('.submenu').stop(false,true).slideUp(200);
+        });
+    });
+</script>
+<!-- 輪播 -->
+<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="js/lick/slick-theme.css"/>
+<script type="text/javascript" src="js/slick/slick.min.js"></script>
 <script>
-	$('.collapse').collapse('hide')
+$('.dm-carousel-lg').slick({
+	dots: true,
+	arrows: false
+});
+
+$('.card-wrap-3').slick({
+	dots: true,
+	arrows: false,
+	slidesToShow: 3,
+  	slidesToScroll: 3,
+  	responsive: [ {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    },
+  	]
+});
+$('.slick-self').slick({
+	dots: true,
+	arrows: false
+});
 </script>
 </body>
 </html>
